@@ -35,7 +35,10 @@ namespace ReplayToJson
                 }
 
                 // Our Replay object now has all currently available information
-                Console.WriteLine(JsonConvert.SerializeObject(replay, Formatting.None, new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects }));
+                Console.WriteLine(JsonConvert.SerializeObject(replay, Formatting.None, new JsonSerializerSettings { 
+                    PreserveReferencesHandling = PreserveReferencesHandling.Objects,
+                    NullValueHandling = NullValueHandling.Ignore
+                }));
             }
             finally
             {
